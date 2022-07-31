@@ -1,0 +1,18 @@
+[deployment]
+
+[[deployment.targets]]
+name = "vayave.com"
+URL = "s3://vayave.com"
+
+cloudFrontDistributionID = "E3OU9KI9G71SZE"
+
+[[deployment.matchers]]
+# Cache static assets for 20 years.
+pattern = "^.+\\.(js|css|svg|ttf|woff|woff2|eot|png|jpg|gif|svg|ttf)$"
+cacheControl = "max-age=630720000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
+theme = "well-traveled"
